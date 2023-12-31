@@ -2,11 +2,11 @@
 require('dotenv').config({path:'../Server/variables.env'}); // Load environment variables from .env file
 
 const dbConfig = {
-    PGuser: process.env.PGuser,
-    PGhost: process.env.PGhost,
-    PGdatabase: process.env.PGdatabase,
-    PGpassword: process.env.PGpassword,
-    PGport: process.env.PGport
+    PGuser: 'postgres',
+    PGhost: 'localhost',
+    PGdatabase: 'Sample',
+    PGpassword: 'srirs1005',
+    PGport: 5433
 };
 
 

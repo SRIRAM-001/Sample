@@ -11,12 +11,13 @@ app.use(cors())
 
 
 const getDetails = async(req,res) => {
+  
     const {postid,userid,title,content} = req.query;
     const query = `insert into posts values ($1,$2,$3,$4) returning *`
     const values = [postid,userid, title, content];
 
     const result = await pool.query(query, values);
-    console.log(result);
+    res.send({'hi':'welcome'})
 }
 
 app.get('/getDetails',getDetails)
@@ -29,11 +30,11 @@ app.get('/',(req,res)=>{
 })
 
 const pool = new Pool({
-  user: keys.PGuser,
-  host: keys.PGhost,
-  database: keys.PGdatabase,
-  password: keys.PGpassword,
-  port: keys.PGport,
+  user: 'postgres',
+  host: 'localhost',
+  database: 'Sample',
+  password: 'srirs1005',
+  port: 5433,
 })
 
 pool.query('SELECT NOW()', (err, res) => {
@@ -55,7 +56,7 @@ pool.query('SELECT NOW()', (err, res) => {
 //   //
 // })
 
-app.listen(5000,()=>{
+app.listen(6000,()=>{
     console.log("listening")
 })
 

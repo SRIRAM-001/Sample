@@ -20,8 +20,8 @@ services:
       - "5000:5000"  # Adjust if your Express app uses a different port
     environment:
       - PGUSER=postgres   # Set PostgreSQL environment variables
-      - PGHOST=db         # Replace 'db' with your PostgreSQL service name
-      - PGDATABASE=sample
+      - PGHOST=localhost         # Replace 'db' with your PostgreSQL service name
+      - PGDATABASE=Sample
       - PGPASSWORD=srirs1005
       - PGPORT=5433       # Adjust to your PostgreSQL port
 

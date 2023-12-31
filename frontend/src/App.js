@@ -6,6 +6,7 @@ import axios from 'axios'
 function App() {
 
   const getDetails = async() => {
+     console.log("asdsfd")
      const response = await axios.get('http://localhost:5000/getDetails', {
         // Pass any required data in the request body
        params: {
@@ -15,6 +16,7 @@ function App() {
         content:'sihhackathonnn'
       },
       });
+      console.log(response)
   }
   
   return (
