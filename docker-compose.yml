@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: dockerfile.dev   # Adjust to your React Dockerfile name
+    ports:
+      - "3000:3000"  # Adjust if your React app uses a different port
+    depends_on:
+      - backend
+
+  backend:
+    container_name: my-express-api
+    build:
+      context: ./Server
+      dockerfile: dockerfile.dev   # Adjust to your Node.js/Express Dockerfile name
+    ports:
+      - "5000:5000"  # Adjust if your Express app uses a different port
+    environment:
+      - PGUSER=postgres   # Set PostgreSQL environment variables
+      - PGHOST=db         # Replace 'db' with your PostgreSQL service name
+      - PGDATABASE=sample
+      - PGPASSWORD=srirs1005
+      - PGPORT=5433       # Adjust to your PostgreSQL port
+
+  db:
+    container_name: my-postgres-db
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: sample
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: srirs1005
+    ports:
+      - "5433:5433"  # Expose PostgreSQL port
