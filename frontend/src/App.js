@@ -7,7 +7,7 @@ function App() {
 
   const getDetails = async() => {
      console.log("asdsfd")
-     const response = await axios.get('http://localhost:5000/getDetails', {
+     const response = await axios.get('https://sampleapp-f4ev.onrender.com/getDetails', {
         // Pass any required data in the request body
        params: {
         postid: 5,
@@ -16,7 +16,7 @@ function App() {
         content:'sihhackathonnn'
       },
       });
-      console.log(response)
+      console.log(response,"res")
   }
   
   return (

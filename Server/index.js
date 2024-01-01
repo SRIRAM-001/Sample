@@ -15,8 +15,8 @@ const getDetails = async(req,res) => {
     const {postid,userid,title,content} = req.query;
     const query = `insert into posts values ($1,$2,$3,$4) returning *`
     const values = [postid,userid, title, content];
-
-    const result = await pool.query(query, values);
+    console.log("jkkk")
+    //const result = await pool.query(query, values);
     res.send({'hi':'welcome'})
 }
 
@@ -56,7 +56,7 @@ pool.query('SELECT NOW()', (err, res) => {
 //   //
 // })
 
-app.listen(6000,()=>{
+app.listen(5000,()=>{
     console.log("listening")
 })
 
