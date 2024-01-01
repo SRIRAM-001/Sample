@@ -16,7 +16,8 @@ const getDetails = async(req,res) => {
     const query = `insert into posts values ($1,$2,$3,$4) returning *`
     const values = [postid,userid, title, content];
     console.log("jkkk")
-    //const result = await pool.query(query, values);
+    const result = await pool.query(query, values);
+    console.log(result)
     res.send({'hi':'welcome'})
 }
 
