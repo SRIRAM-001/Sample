@@ -7,13 +7,13 @@ function App() {
 
   const getDetails = async() => {
      console.log("asdsfd")
-     const response = await axios.get('https://sampleapp-f4ev.onrender.com/getDetails', {
+     const response = await axios.get('https://sam-5f6z.onrender.com/getDetails', {
         // Pass any required data in the request body
        params: {
-        postid: 5,
-        userid:3,
-        title:'sriramrsss',
-        content:'sihhackathonnn'
+        postid: 6,
+        userid:2,
+        title:'sriramrsssss',
+        content:'sihhackathonnnnnn'
       },
       });
       console.log(response,"res")
